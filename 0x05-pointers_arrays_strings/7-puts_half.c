@@ -1,4 +1,6 @@
 #include "main.h"
+#include "main.h"
+#include "main.h"
 /**
 *puts_half - a function that prints half of a string
 *@str: String to be printed
@@ -22,8 +24,4 @@ else
 c = b / 2;
 }
 for (; c < b; c++)
-{
-_putchar(str[c]);
-}
-_putchar('\n');
 }
