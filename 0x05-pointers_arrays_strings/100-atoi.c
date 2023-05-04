@@ -6,12 +6,34 @@
  */
 int _atoi(char *s)
 {
-unsigned int num = 0;
-int sign = 1;
-if (*s == '_')
-sign *= -1;
-else (*s >= '0' && *s <= '9')
+
+int a, b, n, len, j, digit;
+a = 0;
+b = 0;
+n = 0;
+len = 0;
+j = 0;
+digit = 0;
+while (s[len] != '\0')
+len++;
+while (a < len && j == 0)
 {
-num = (num * 10) + (*s - '0');
+if (s[a] == '_')
+++b;
+if (s[a] >= '0' && s[a] <= '9')
+{
+digit = s[a] - '0';
+if (b % 2)
+digit = -digit;
+n = n * 10 + digit;
+j = 1;
+if (s[a + 1] < '0' || s[a + 1] > '9')
+break;
+j = 0;
 }
-while (num > 0)
+a++;
+}
+if (j == 0)
+return (0);
+return (n);
+}
