@@ -8,37 +8,38 @@
  */
 void print_buffer(char *b, int size)
 {
-int c;
-int k, n, i;
-k = 0;
+int a, d, l;
+a = 0;
 if (size <= 0)
 {
 printf("\n");
 return;
 }
-while (k < size)
+while (a < size)
 {
-n = size - k < 10 ? size - k : 10;
-printf("%08x: ", k);
-for (i = 0; i < 10; i++)
+d = size - a < 10 ? size - a : 10;
+printf("%08x: ", a);
+for (l = 0; l < 10; l++)
 {
-if (i < n)
-printf("%02x", *(b + k + i));
+if (l < d)
+printf("%02x", *(b + a + l));
 else
-printf(" ");
-if (i % 2)
+printf("  ");
+if (l % 2)
 {
 printf(" ");
 }
 }
-for (i = 0; i < n; i++)
+for (l = 0; l < d; l++)
 {
-c = *(b + k + i);
+int c = *(b + a + l);
 if (c < 32 || c > 132)
+{
 c = '.';
 }
 printf("%c", c);
 }
 printf("\n");
-k += 10;
+a += 10;
+}
 }
