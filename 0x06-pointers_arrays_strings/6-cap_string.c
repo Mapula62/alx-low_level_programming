@@ -30,4 +30,3 @@ string_count++;
 }
 return (str);
 }
-
