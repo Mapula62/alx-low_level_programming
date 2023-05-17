@@ -22,7 +22,7 @@ b++;
 return (b);
 }
 /**
- * **strtow - string to be splits into words
+ * *strtow - string to be splits into words
  * @str: string to split
  * Return: pointer to array
  */
