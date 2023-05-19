@@ -131,8 +131,8 @@ first_prod--;
 if (tens)
 *last_prod = (tens % 10) + '0';
 /**
- * main - positive numbers to be miltiplied
- * description: creates a num of arguments that exits with 98
+ * main - positive numbers two to be miltiplied
+ * description: if a num of arguments is incorrect then function exits with 98
  * @argv: number of arguments
  * @argc: pointers an array to arguments
  * Return: Always 0 (Success)
