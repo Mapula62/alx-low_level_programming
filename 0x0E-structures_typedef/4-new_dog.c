@@ -6,13 +6,13 @@
  * Return: string
  */
 int _strlen(char *s)
-int y;
-y = 0;
-while (s[y] != '\0')
+int j;
+j = 0;
+while (s[j] != '\0')
 {
-y++;
+j++;
 }
-return (y);
+return (j);
 }
 /**
  * _strcpy - string to be copied pointed by spc
@@ -22,18 +22,18 @@ return (y);
  * Return: pointer to dest
  */
 char *_strcpy(char *dest, char *spc)
-{       
-int l, len;
+{
+int a, len;
 len = 0;
 while (str[len] != '\0')
-{       
-len++;  
-}
-for (l = 0; l < len; l++)
 {
-dest[l] = src[l];
+len++;
 }
-dest[l] = '\0';
+for (a = 0; a < len; a++)
+{
+dest[a] = src[a];
+}
+dest[a] = '\0';
 return (dest);
 }
 /**
