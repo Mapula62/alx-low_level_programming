@@ -42,32 +42,30 @@ return (dest);
  * @name: the name of the dog
  * @age: the age of the dog
  * @owner: the owner of the dog
- * Return: pointer to the dog or NULL
+ * Return: the new struct dog
  */
-int new_dog(char *name, float age, char *owner)
+int doggie(char *name, float age, char *owner)
 {
-int dog_t, *dog;
-int len1, len2;
-len1 = _strlen(name);
-len2 = _strlen(owner);
-dog = malloc(sizeof(dog_t));
-if (dog == NULL)
+if (name == NULL || age < 0 || owner == NULL)
 return (NULL);
-dog->name = malloc(sizeof(char) * (len1 + 1));
-if (dog->name == NULL)
+doggie = malloc(sizeof(dog_t));
+if (doggie == NULL)
+return (NULL);
+doggie->name = malloc(sizeof(char) * (_strlen(name) + 1));
+if (doggie->name == NULL)
 {
-free(dog);
+free(doggie);
 return (NULL);
 }
-dog->owner = malloc(sizeof(char) * (len2 + 1));
-if (dog->owner == NULL)
+doggie->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+if (doggie->owner == NULL)
 {
-free(dog);
-free(dog->name);
+free(doggie->name);
+free(doggie);
 return (NULL);
 }
-_strcpy(dog->name, name);
-_strcpy(dog->owner, owner);
-dog->age = age;
-return (dog);
+doggie->name = _strcpy(doggie->name, name);
+doggie->age = age;
+doggie->owner = _strcpy(doggie->owner, owner);
+return (doggie);
 }
