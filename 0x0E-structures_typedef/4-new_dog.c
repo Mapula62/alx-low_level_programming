@@ -6,13 +6,14 @@
  * Return: string
  */
 int _strlen(char *s)
-int j;
-j = 0;
-while (s[j] != '\0')
 {
-j++;
+int c;
+c = 0;
+while (s[c] != '\0')
+{
+c++;
 }
-return (j);
+return (c);
 }
 /**
  * _strcpy - string to be copied pointed by spc
@@ -21,19 +22,19 @@ return (j);
  * @src: copies string
  * Return: pointer to dest
  */
-char *_strcpy(char *dest, char *spc)
+char *_strcpy(char *dest, char *src)
 {
-int a, len;
+int r, len;
 len = 0;
-while (str[len] != '\0')
+while (src[len] != '\0')
 {
 len++;
 }
-for (a = 0; a < len; a++)
+for (r = 0; r < len; r++)
 {
-dest[a] = src[a];
+dest[r] = src[r];
 }
-dest[a] = '\0';
+dest[r] = '\0';
 return (dest);
 }
 /**
@@ -43,16 +44,16 @@ return (dest);
  * @owner: the owner of the dog
  * Return: pointer to the dog or NULL
  */
-dog_t *new_dog(char *name, float age, *owner)
+int new_dog(char *name, float age, char *owner)
 {
-dog_t *dog;
+int dog_t, *dog;
 int len1, len2;
 len1 = _strlen(name);
 len2 = _strlen(owner);
 dog = malloc(sizeof(dog_t));
 if (dog == NULL)
 return (NULL);
-dog->name = malloc(soizeof(char) * (len1 + 1));
+dog->name = malloc(sizeof(char) * (len1 + 1));
 if (dog->name == NULL)
 {
 free(dog);
