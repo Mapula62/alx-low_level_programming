@@ -1,24 +1,26 @@
+#include <stdlib.h>
 #include <stdio.h>
-#include "function_pointers.h"
+#include "3-calc.h"
 /**
- * struct op - Struct op
- *
- * @op: The operator
- * @f: The function associated
+ * main - input main function
+ * @argc: input
+ * @argv: input
+ * Return: nothing
  */
-typedef struct op
+int main(int argc, char *argv[])
 {
-    char *op;
-    int (*f)(int a, int b);
-} op_t;
-
-op_t ops[] = {
-        {"+", op_add},
-        {"-", op_sub},
-        {"*", op_mul},
-        {"/", op_div},
-        {"%", op_mod},
-        {NULL, NULL}
-    };
-    int i;
+int (*oprt)(int, int);
+if (argc != 4)
+{
+printf("Error\n");
+exit(98);
+}
+oprt = get_op_func(argv[2]);
+if (!oprt)
+{
+printf("Error\n");
+exit(99);
+}
+printf("%d\n", oprt(atoi(argv[1]), atoi(argv[3])));
+return (0);
 }
