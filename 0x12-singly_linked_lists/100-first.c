@@ -1,5 +1,6 @@
 #include <stdio.h>
-void _constructor(void)__attribute__((constructor));
+#include "list.h"
+void _constructor(void) __attribute__ ((constructor));
 /**
  * _constructor - prints a function that executes before main
  * Return: nothing
