@@ -7,7 +7,7 @@
  * @h: pointer that prints list_t list
  * Return: number of nodes
  */
-size_t print_list(const list_t *h);
+size_t print_list(const list_t *h)
 {
 size_t l = 0;
 while (h)
