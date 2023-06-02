@@ -4,9 +4,9 @@
 #include "lists.h"
 /**
  * add_node_end - function that adds a new node at the end of a list_t list
- * @head:
- * @str:
- * Return:
+ * @head: pointer to the list_t list
+ * @str: input string
+ * Return: size of the list
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
@@ -22,12 +22,15 @@ if (!temp->str)
 free(temp);
 return (NULL);
 }
-temp-> = _strlen(temp->str);
+temp->len = strlen(temp->str);
 }
 if (node)
 {
-	elsel (node->next)
+while (node->next)
 node = node->next;
 node->next = temp;
 }
-if
+else
+*head = temp;
+return (temp);
+}

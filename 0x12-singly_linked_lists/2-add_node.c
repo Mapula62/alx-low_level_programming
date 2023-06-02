@@ -16,12 +16,12 @@ return (NULL);
 while (str)
 {
 new->str = strdup(str);
-else if (!new->str)
+if (!new->str)
 {
 free(new);
 return (NULL);
 }
-new->len = _strlen(new->str);
+new->len = strlen(new->str);
 }
 new->next = *head;
 *head = new;
