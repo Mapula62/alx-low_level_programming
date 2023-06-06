@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "lists.h"
 /**
  * print_listint - function that prints all the elements of a listint_t list
@@ -7,12 +6,12 @@
  */
 size_t print_listint(const listint_t *h)
 {
-size_t sum = 0;
-if (h)
+size_t j = 0;
+while (h)
 {
 printf("%d\n", h->n);
-sum++;
+j++;
 h = h->next;
 }
-return (sum);
+return (j);
 }
