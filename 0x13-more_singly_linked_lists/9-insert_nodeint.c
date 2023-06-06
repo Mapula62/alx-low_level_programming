@@ -29,8 +29,9 @@ new->next = node->next;
 node->next = new;
 return (new);
 }
-else
-temp_node = temp_node->next;
+x++;
+node = node->next;
 }
+free(new);
 return (NULL);
 }
