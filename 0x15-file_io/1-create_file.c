@@ -8,16 +8,20 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-ssize_t b = 0;
-ssize_t len = _strlen(text_content);
+ssize_t b;
+ssize_t j = 0;
 int n;
-if (!filename)
+if (filename == NULL)
 return (-1);
-n = open(filename, 0_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
-if (n == -1)
+if (text_content != NULL)
+{
+for (j = 0; text_content[j];)
+j++;
+}
+b = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+n = write(b, text_content, j);
+if (b == -1 || n == -1)
 return (-1);
-if (len)
-b = write(n, text_content, len);
-close(n);
-return (b == len ? 1 : -1);
+close(b);
+return (1);
 }
