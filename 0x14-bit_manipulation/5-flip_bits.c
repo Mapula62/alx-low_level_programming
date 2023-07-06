@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * flip_bits - returns the number of bits needed to be flippled
  * @n: input first number
