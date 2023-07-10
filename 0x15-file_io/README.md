@@ -1,4 +1,4 @@
-#Project: 0x15. C - File I/O
+0x15. C - File I/O project 
 
 Tasks
 0. Tread lightly, she is near
